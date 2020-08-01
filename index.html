@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<title>Animation Car</title>
+		<style type="text/css" media="screen">
+			
+		*
+		{
+			margin: 0;
+			padding: 0;
+			box-sizing: border-box;
+		}
+		.sky
+		{
+			height: 100%;
+			width: 100%;
+			
+			background-image: url('sky.jpg');
+			background-position: center;
+			position: relative;
+			background-size: cover;
+			overflow-x: hidden;
+		}
+		.highway
+		{
+			height: 200px;
+			width: 500%;
+			display: block;
+			background-image: url('road.jpg');
+			position: absolute;
+			bottom: 0;
+			left: 0;
+			right: 0;
+			z-index: 1;
+			animation: highway 5s linear infinite;
+		}
+
+		@keyframes highway
+		{
+			100%{
+				transform: translateX(-4300px);
+			}
+		}
+
+
+		.city
+		{
+			height: 250px;
+			width: 500%;
+			background-image:  url('city.png');
+			position: absolute;
+			bottom: 200px;
+			left: 0;
+			right: 0;
+			z-index: 1;
+			display: block;
+			background-repeat: repeat-x;
+			animation: city 20s linear infinite;
+		}
+		@keyframes city
+		{
+			100%{
+				transform: translateX(-1700px);
+			}
+		}
+
+
+
+
+
+		.car
+		{
+			width: 500px;
+			left: 50%;
+			bottom: 100px;
+			transform: translateX(-50%);
+			position: absolute;
+			z-index: 2;
+		}
+		.car img
+		{
+			width: 100%;
+			animation: car 0.8s linear infinite;
+		}
+		@keyframes car
+		{
+			100%{
+				transform: translateY(-1px);
+			}
+			50%{
+				transform: translateY(8px);
+			}
+			0%{
+				transform: translateY(-1px);
+			}
+		}
+
+
+
+		.wheel
+		{
+			left: 50%;
+			bottom: 178px;
+			transform: translateX(-50%);
+			position: absolute;
+			z-index: 2;
+		}
+
+		.wheel img
+		{
+			width: 90px;
+			height: 90px;
+		animation: wheel 0.5s linear infinite;
+		}
+
+
+		.backwheel
+		{
+			left: -206px;
+			position: absolute;
+			bottom: -70px;
+		}
+		.frontwheel
+		{
+			left: 100px;
+			position: absolute;
+			bottom: -70px;
+		}
+
+		@keyframes wheel
+		{
+			100%{
+				transform: rotate(360deg);
+			}
+		}
+
+
+
+		.rain
+		{
+			height: 100vh;
+			background-image: url('rain.png');
+			z-index: 4;
+			animation: rain .3s linear infinite;
+
+		}
+
+		@keyframes rain
+		{
+			from {background-position: 0% 0%;}
+			to {background-position: 40% 100%;}
+		}
+		
+		</style>
+	</head>
+	<body>
+
+		
+
+		<div class="sky">
+
+			<img src="sky.jpg" alt="">
+
+			<div class="highway"></div>
+			
+			<div class="city"></div>
+
+			<div class="car">
+				<img src="car.png" alt="">
+			</div>
+
+			<div class="wheel">
+				<img src="wheel.png" alt="" class="backwheel">
+			    <img src="wheel.png" alt="" class="frontwheel">
+			    </div>
+			    <div class="rain">
+			    <img src="rain.png" alt="haaaayyy">
+			
+		</div>
+		
+
+		</div>
+
+		
+	</body>
+</html>
